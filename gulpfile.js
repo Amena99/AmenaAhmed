@@ -32,7 +32,7 @@ gulp.task('vendor', function(cb) {
 
   // Font Awesome
   gulp.src([
-      './node_modules/@fortawesome/**/*',
+      './node_modules/@fontawesome/**/*',
     ])
     .pipe(gulp.dest('./vendor'))
 

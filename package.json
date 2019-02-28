@@ -1,6 +1,9 @@
 {
     "title": "Agency",
     "name": "startbootstrap-agency",
+    "scripts": {
+        "start": "index.html"
+    },
     "version": "5.0.5",
     "description": "Agency is a one page HTML theme for Bootstrap.",
     "keywords": [
