@@ -2,7 +2,8 @@
     "title": "Agency",
     "name": "startbootstrap-agency1",
     "scripts": {
-        "start": "gulp dev"
+        "start:dev": "gulp dev",
+        "start": "gulp default"
     },
     "version": "5.0.5",
     "description": "Agency is a one page HTML theme for Bootstrap.",
