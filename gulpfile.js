@@ -28,26 +28,26 @@ gulp.task('vendor', function(cb) {
       '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
       '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
-    .pipe(gulp.dest('./vendor/bootstrap'))
+    .pipe(gulp.dest('./public/vendor/bootstrap'))
 
   // Font Awesome
   gulp.src([
       './node_modules/@fontawesome/**/*',
     ])
-    .pipe(gulp.dest('./vendor'))
+    .pipe(gulp.dest('./public/vendor'))
 
   // jQuery
   gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('./vendor/jquery'))
+    .pipe(gulp.dest('./public/vendor/jquery'))
 
   // jQuery Easing
   gulp.src([
       './node_modules/jquery.easing/*.js'
     ])
-    .pipe(gulp.dest('./vendor/jquery-easing'))
+    .pipe(gulp.dest('./public/vendor/jquery-easing'))
 
   cb();
 
@@ -69,12 +69,12 @@ function css() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./public/css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./public/css"))
     .pipe(browsersync.stream());
 }
 
@@ -83,9 +83,9 @@ function js() {
   return gulp
     .src([
       './js/*.js',
-      '!./js/*.min.js',
-      '!./js/contact_me.js',
-      '!./js/jqBootstrapValidation.js'
+      './js/*.min.js',
+      './js/contact_me.js',
+      './js/jqBootstrapValidation.js'
     ])
     .pipe(uglify())
     .pipe(header(banner, {
@@ -94,7 +94,7 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./public/js'))
     .pipe(browsersync.stream());
 }
 
